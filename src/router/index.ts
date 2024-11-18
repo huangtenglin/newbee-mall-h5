@@ -13,7 +13,9 @@ const routes = [
         path: '/login',
         name: 'login',
         component: () => import('@/views/Login/index.vue'),
-        meta: {},
+        meta: {
+            showNavBar: false
+        },
     },
     {
         path: "/user",
