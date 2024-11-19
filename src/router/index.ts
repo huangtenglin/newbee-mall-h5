@@ -7,6 +7,7 @@ const routes = [
         component: () => import('@/views/Home/index.vue'),
         meta: {
             showNavBar: true,
+            showHeader: false,
         }
     },
     {
@@ -14,7 +15,8 @@ const routes = [
         name: 'login',
         component: () => import('@/views/Login/index.vue'),
         meta: {
-            showNavBar: false
+            showNavBar: false,
+            showHeader: false,
         },
     },
     {
@@ -23,6 +25,7 @@ const routes = [
         component: () => import('@/views/User/index.vue'),
         meta: {
             showNavBar: true,
+            showHeader: false,
         }
     },
     {
@@ -31,6 +34,7 @@ const routes = [
         component: () => import("@/views/Cart/index.vue"),
         meta: {
             showNavBar: true,
+            showHeader: false,
         }
     },
     {
@@ -38,7 +42,8 @@ const routes = [
         name: "category",
         component: () => import('@/views/Category/index.vue'),
         meta: {
-            showNavBar: true
+            showNavBar: true,
+            showHeader: false,
         }
     }
 ];
