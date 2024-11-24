@@ -172,6 +172,10 @@ const isSrcoll = () => {
       (document.documentElement.scrollTop || document.body.scrollTop) > 50
   })
 }
+
+const emitGoToDetail = (item) =>{
+  router.push({ path: `/product/${item.goodsId}`})
+}
 </script>
 
 <style lang="less" scoped>

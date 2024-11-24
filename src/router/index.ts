@@ -45,9 +45,26 @@ const routes = [
             showNavBar: true,
             showHeader: false,
         }
+    },
+    {
+        path: '/product/:id',
+        name: 'product',
+        meta: {
+            showNavBar: true,
+            showHeader: false,
+        }
+    },
+    {
+        path: '/product-list',
+        name: 'product-list',
+        component: () => import('@/views/ProductList/index.vue'),
+        meta: {
+            showNavBar: false,
+            showHeader: false,
+        }
     }
 ];
-
+// @ts-ignore
 const router = createRouter({
     history: createWebHashHistory(),  // 确保使用 createWebHistory
     routes

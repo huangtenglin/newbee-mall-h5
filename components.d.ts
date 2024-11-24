@@ -9,7 +9,8 @@ declare module 'vue' {
   export interface GlobalComponents {
     GoodsList: typeof import('./src/components/GoodsList.vue')['default']
     Header: typeof import('./src/components/Header.vue')['default']
-    HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
+    HeaderSearch: typeof import('./src/components/HeaderSearch.vue')['default']
+    ListScroll: typeof import('./src/components/ListScroll.vue')['default']
     NavBar: typeof import('./src/components/NavBar.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
@@ -19,10 +20,14 @@ declare module 'vue' {
     VanField: typeof import('vant/es')['Field']
     VanForm: typeof import('vant/es')['Form']
     VanIcon: typeof import('vant/es')['Icon']
+    VanList: typeof import('vant/es')['List']
+    VanPullRefresh: typeof import('vant/es')['PullRefresh']
+    VanSearch: typeof import('vant/es')['Search']
     VanSkeleton: typeof import('vant/es')['Skeleton']
     VanSwipe: typeof import('vant/es')['Swipe']
     VanSwipeItem: typeof import('vant/es')['SwipeItem']
-    VantField: typeof import('vant/es')['tField']
+    VanTab: typeof import('vant/es')['Tab']
+    VanTabs: typeof import('vant/es')['Tabs']
     VueImageVerify: typeof import('./src/components/VueImageVerify.vue')['default']
   }
 }
