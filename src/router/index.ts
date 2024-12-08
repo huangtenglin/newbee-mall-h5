@@ -1,6 +1,6 @@
 import { createWebHashHistory, createRouter } from 'vue-router';
 
-const routes = [
+const routes:any = [
     {
         path: '/',
         name: 'home',
@@ -33,7 +33,7 @@ const routes = [
         name: 'cart',
         component: () => import("@/views/Cart/index.vue"),
         meta: {
-            showNavBar: true,
+            showNavBar: false,
             showHeader: false,
         }
     },
@@ -49,18 +49,64 @@ const routes = [
     {
         path: '/product/:id',
         name: 'product',
+        component: () => import("@/views/ProductDetail/index.vue"),
         meta: {
-            showNavBar: true,
+            showNavBar:false,
             showHeader: false,
         }
     },
     {
         path: '/product-list',
-        name: 'product-list',
+        name: 'productList',
         component: () => import('@/views/ProductList/index.vue'),
         meta: {
             showNavBar: false,
             showHeader: false,
+        }
+    },
+    {
+        path: '/create-order',
+        name: 'createOrder',
+        component: () => import('@/views/CreateOrder/index.vue'),
+        meta:{
+            showNavBar: false,
+            showHeader: false
+        }
+    },
+    {
+        path: '/add-address',
+        name: 'addAddress',
+        component: () => import("@/views/Address/AddAddress.vue"),
+        meta:{
+            showNavBar: false,
+            showHeader: false
+        }
+    },
+    {
+        path: '/edit-address',
+        name: 'editAddress',
+        component: () => import("@/views/Address/EditAddress.vue"),
+        meta:{
+            showNavBar: false,
+            showHeader: false
+        }
+    },
+    {
+        path: '/about',
+        name: 'about',
+        component: () => import("@/views/About/index.vue"),
+        meta:{
+            showNavBar: false,
+            showHeader: false
+        }
+    },
+    {
+        path: "/account",
+        name: 'account',
+        component: () => import("@/views/Account/index.vue"),
+        meta:{
+            showNavBar: false,
+            showHeader: false
         }
     }
 ];

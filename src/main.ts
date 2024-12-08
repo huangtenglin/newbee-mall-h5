@@ -19,7 +19,7 @@ app.config.globalProperties.$filters = {
         }
     }
 }
+app.use(createPinia())
 
 app.use(router)
-app.use(createPinia)
 app.mount('#app')

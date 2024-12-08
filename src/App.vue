@@ -1,6 +1,8 @@
 <template>
-  <router-view></router-view>
-  <NavBar v-if="metaData"/>
+  <div id="app">
+    <router-view></router-view>
+    <NavBar v-if="metaData"/>
+  </div>
 </template>
 <script setup lang="ts">
 import { computed } from 'vue';
@@ -13,4 +15,7 @@ const metaData = computed(() => route.meta.showNavBar);
 </script>
 <style scoped lang="less">
 @import './common/style/mixin';
+#app{
+  height: 100vh;
+}
 </style>

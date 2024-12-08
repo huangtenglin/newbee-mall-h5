@@ -9,15 +9,18 @@
         >
         <i :class="currentIndex === index?`${item.icon} active` : `${item.icon}`"></i>
         <span>{{ item.title }}</span>
+        <span v-if="item.countClass" class="bagde">{{cartStore.cartList.length}}</span>
       </div>
     </ul>
   </div>
 </template>
 <script setup>
-import { ref, reactive } from 'vue'
+import { ref, reactive, onMounted } from 'vue'
 import { useRouter, useRoute} from 'vue-router'
+import { useCartStroe } from "@/store/cart"
 let currentIndex = ref(0)
 const router = useRouter();
+const cartStore = useCartStroe();
 const navList = reactive([
   {
     title: "首页",
@@ -35,7 +38,8 @@ const navList = reactive([
     title: "购物车",
     id: 3,
     icon: "iconfont icon-Cart",
-    path: "/cart"
+    path: "/cart",
+    countClass: cartStore.cartList.length > 0 ? 'badge' : ''
   },
   {
     title: "个人中心",
@@ -48,6 +52,10 @@ const toPath = (item) => {
   currentIndex.value = item.id - 1;
   router.push(item.path)
 }
+
+onMounted(() =>{
+  cartStore.getCartList();
+})
 </script>
 
 
@@ -85,6 +93,20 @@ const toPath = (item) => {
       flex-direction: column;
       text-align: center;
       color: #666;
+      position: relative;
+
+      .bagde{
+        position: absolute;
+        top: 0px;
+        right: 25px;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        line-height: 16px;
+        text-align: center;
+        background: #ee0a24;
+        color: #fff;
+      }
 
       i {
         text-align: center;

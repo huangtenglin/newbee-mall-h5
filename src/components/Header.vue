@@ -4,6 +4,9 @@
             <van-icon name="arrow-left" />
         </span>
         <div class="simple-header-title">{{ title }}</div>
+        <div class="more">
+            <van-icon name="bars" class="font-iconfont"/>
+        </div>
     </header>
 </template>
 <script setup>
@@ -55,5 +58,8 @@ const toBack = () => {
       flex: 1;
       text-align: center;
     }
+  }
+  .font-iconfont{
+    font-size: 20px;
   }
 </style>
